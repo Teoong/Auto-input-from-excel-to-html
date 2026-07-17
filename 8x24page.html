@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternating 8x24 Grid Layout (48 Total Rows)</title>
+    <style>
+        .grid-container {
+            display: grid;
+            /* Exactly 8 equal-width horizontal columns */
+            grid-template-columns: repeat(8, minmax(130px, 1fr));
+            gap: 4px 8px; /* Compact layout spacing */
+            padding: 15px;
+            max-width: 1600px;
+            margin: 0 auto;
+            font-family: sans-serif;
+            align-items: center;
+        }
+
+        /* Input field styling (for odd rows) */
+        .grid-container input {
+            width: 100%;
+            height: 36px;
+            padding: 6px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Button row block layout (for even rows) */
+        .button-group-row {
+            display: flex;
+            gap: 4px;
+            width: 100%;
+            height: 24px;
+            box-sizing: border-box;
+        }
+
+        .button-group-row button {
+            flex: 1; /* Stretches buttons evenly to fill column width */
+            height: 100%;
+            padding: 0;
+            border: 1px solid #007bff;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-group-row button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Border change on text box focus */
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 4px rgba(0,123,255,0.25);
+        }
+
+        /* Visual styling to clearly group an input row with its button row below it */
+        .grid-container > input:nth-child(16n+1), 
+        .grid-container > input:nth-child(16n+2),
+        .grid-container > input:nth-child(16n+3),
+        .grid-container > input:nth-child(16n+4),
+        .grid-container > input:nth-child(16n+5),
+        .grid-container > input:nth-child(16n+6),
+        .grid-container > input:nth-child(16n+7),
+        .grid-container > input:nth-child(16n+8) {
+            background-color: #fdfdfd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- ROW 1 (Inputs) & ROW 2 (Buttons) -->
+        <input type="text" name="cell-1-1">
+        <input type="text" name="cell-1-2">
+        <input type="text" name="cell-1-3">
+        <input type="text" name="cell-1-4">
+        <input type="text" name="cell-1-5">
+        <input type="text" name="cell-1-6">
+        <input type="text" name="cell-1-7">
+        <input type="text" name="cell-1-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 3 (Inputs) & ROW 4 (Buttons) -->
+        <input type="text" name="cell-2-1">
+        <input type="text" name="cell-2-2">
+        <input type="text" name="cell-2-3">
+        <input type="text" name="cell-2-4">
+        <input type="text" name="cell-2-5">
+        <input type="text" name="cell-2-6">
+        <input type="text" name="cell-2-7">
+        <input type="text" name="cell-2-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 5 (Inputs) & ROW 6 (Buttons) -->
+        <input type="text" name="cell-3-1">
+        <input type="text" name="cell-3-2">
+        <input type="text" name="cell-3-3">
+        <input type="text" name="cell-3-4">
+        <input type="text" name="cell-3-5">
+        <input type="text" name="cell-3-6">
+        <input type="text" name="cell-3-7">
+        <input type="text" name="cell-3-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 7 (Inputs) & ROW 8 (Buttons) -->
+        <input type="text" name="cell-4-1">
+        <input type="text" name="cell-4-2">
+        <input type="text" name="cell-4-3">
+        <input type="text" name="cell-4-4">
+        <input type="text" name="cell-4-5">
+        <input type="text" name="cell-4-6">
+        <input type="text" name="cell-4-7">
+        <input type="text" name="cell-4-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 9 (Inputs) & ROW 10 (Buttons) -->
+        <input type="text" name="cell-5-1">
+        <input type="text" name="cell-5-2">
+        <input type="text" name="cell-5-3">
+        <input type="text" name="cell-5-4">
+        <input type="text" name="cell-5-5">
+        <input type="text" name="cell-5-6">
+        <input type="text" name="cell-5-7">
+        <input type="text" name="cell-5-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 11 (Inputs) & ROW 12 (Buttons) -->
+        <input type="text" name="cell-6-1">
+        <input type="text" name="cell-6-2">
+        <input type="text" name="cell-6-3">
+        <input type="text" name="cell-6-4">
+        <input type="text" name="cell-6-5">
+        <input type="text" name="cell-6-6">
+        <input type="text" name="cell-6-7">
+        <input type="text" name="cell-6-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 13 (Inputs) & ROW 14 (Buttons) -->
+        <input type="text" name="cell-7-1">
+        <input type="text" name="cell-7-2">
+        <input type="text" name="cell-7-3">
+        <input type="text" name="cell-7-4">
+        <input type="text" name="cell-7-5">
+        <input type="text" name="cell-7-6">
+        <input type="text" name="cell-7-7">
+        <input type="text" name="cell-7-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 15 (Inputs) & ROW 16 (Buttons) -->
+        <input type="text" name="cell-8-1">
+        <input type="text" name="cell-8-2">
+        <input type="text" name="cell-8-3">
+        <input type="text" name="cell-8-4">
+        <input type="text" name="cell-8-5">
+        <input type="text" name="cell-8-6">
+        <input type="text" name="cell-8-7">
+        <input type="text" name="cell-8-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 17 (Inputs) & ROW 18 (Buttons) -->
+        <input type="text" name="cell-9-1">
+        <input type="text" name="cell-9-2">
+        <input type="text" name="cell-9-3">
+        <input type="text" name="cell-9-4">
+        <input type="text" name="cell-9-5">
+        <input type="text" name="cell-9-6">
+        <input type="text" name="cell-9-7">
+        <input type="text" name="cell-9-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 19 (Inputs) & ROW 20 (Buttons) -->
+        <input type="text" name="cell-10-1">
+        <input type="text" name="cell-10-2">
+        <input type="text" name="cell-10-3">
+        <input type="text" name="cell-10-4">
+        <input type="text" name="cell-10-5">
+        <input type="text" name="cell-10-6">
+        <input type="text" name="cell-10-7">
+        <input type="text" name="cell-10-8">
+
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 21 (Inputs) & ROW 22 (Buttons) -->
+        <input type="text" name="cell-1-1">
+        <input type="text" name="cell-1-2">
+        <input type="text" name="cell-1-3">
+        <input type="text" name="cell-1-4">
+        <input type="text" name="cell-1-5">
+        <input type="text" name="cell-1-6">
+        <input type="text" name="cell-1-7">
+        <input type="text" name="cell-1-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 23 (Inputs) & ROW 24 (Buttons) -->
+        <input type="text" name="cell-2-1">
+        <input type="text" name="cell-2-2">
+        <input type="text" name="cell-2-3">
+        <input type="text" name="cell-2-4">
+        <input type="text" name="cell-2-5">
+        <input type="text" name="cell-2-6">
+        <input type="text" name="cell-2-7">
+        <input type="text" name="cell-2-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 25 (Inputs) & ROW 26 (Buttons) -->
+        <input type="text" name="cell-3-1">
+        <input type="text" name="cell-3-2">
+        <input type="text" name="cell-3-3">
+        <input type="text" name="cell-3-4">
+        <input type="text" name="cell-3-5">
+        <input type="text" name="cell-3-6">
+        <input type="text" name="cell-3-7">
+        <input type="text" name="cell-3-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 27 (Inputs) & ROW 28 (Buttons) -->
+        <input type="text" name="cell-4-1">
+        <input type="text" name="cell-4-2">
+        <input type="text" name="cell-4-3">
+        <input type="text" name="cell-4-4">
+        <input type="text" name="cell-4-5">
+        <input type="text" name="cell-4-6">
+        <input type="text" name="cell-4-7">
+        <input type="text" name="cell-4-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 29 (Inputs) & ROW 30 (Buttons) -->
+        <input type="text" name="cell-5-1">
+        <input type="text" name="cell-5-2">
+        <input type="text" name="cell-5-3">
+        <input type="text" name="cell-5-4">
+        <input type="text" name="cell-5-5">
+        <input type="text" name="cell-5-6">
+        <input type="text" name="cell-5-7">
+        <input type="text" name="cell-5-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 31 (Inputs) & ROW 32 (Buttons) -->
+        <input type="text" name="cell-6-1">
+        <input type="text" name="cell-6-2">
+        <input type="text" name="cell-6-3">
+        <input type="text" name="cell-6-4">
+        <input type="text" name="cell-6-5">
+        <input type="text" name="cell-6-6">
+        <input type="text" name="cell-6-7">
+        <input type="text" name="cell-6-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 33 (Inputs) & ROW 34 (Buttons) -->
+        <input type="text" name="cell-7-1">
+        <input type="text" name="cell-7-2">
+        <input type="text" name="cell-7-3">
+        <input type="text" name="cell-7-4">
+        <input type="text" name="cell-7-5">
+        <input type="text" name="cell-7-6">
+        <input type="text" name="cell-7-7">
+        <input type="text" name="cell-7-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 35 (Inputs) & ROW 36 (Buttons) -->
+        <input type="text" name="cell-8-1">
+        <input type="text" name="cell-8-2">
+        <input type="text" name="cell-8-3">
+        <input type="text" name="cell-8-4">
+        <input type="text" name="cell-8-5">
+        <input type="text" name="cell-8-6">
+        <input type="text" name="cell-8-7">
+        <input type="text" name="cell-8-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 37 (Inputs) & ROW 38 (Buttons) -->
+        <input type="text" name="cell-9-1">
+        <input type="text" name="cell-9-2">
+        <input type="text" name="cell-9-3">
+        <input type="text" name="cell-9-4">
+        <input type="text" name="cell-9-5">
+        <input type="text" name="cell-9-6">
+        <input type="text" name="cell-9-7">
+        <input type="text" name="cell-9-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 39 (Inputs) & ROW 40 (Buttons) -->
+        <input type="text" name="cell-10-1">
+        <input type="text" name="cell-10-2">
+        <input type="text" name="cell-10-3">
+        <input type="text" name="cell-10-4">
+        <input type="text" name="cell-10-5">
+        <input type="text" name="cell-10-6">
+        <input type="text" name="cell-10-7">
+        <input type="text" name="cell-10-8">
+
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 41 (Inputs) & ROW 42 (Buttons) -->
+        <input type="text" name="cell-1-1">
+        <input type="text" name="cell-1-2">
+        <input type="text" name="cell-1-3">
+        <input type="text" name="cell-1-4">
+        <input type="text" name="cell-1-5">
+        <input type="text" name="cell-1-6">
+        <input type="text" name="cell-1-7">
+        <input type="text" name="cell-1-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 43 (Inputs) & ROW 44 (Buttons) -->
+        <input type="text" name="cell-2-1">
+        <input type="text" name="cell-2-2">
+        <input type="text" name="cell-2-3">
+        <input type="text" name="cell-2-4">
+        <input type="text" name="cell-2-5">
+        <input type="text" name="cell-2-6">
+        <input type="text" name="cell-2-7">
+        <input type="text" name="cell-2-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 45 (Inputs) & ROW 46 (Buttons) -->
+        <input type="text" name="cell-3-1">
+        <input type="text" name="cell-3-2">
+        <input type="text" name="cell-3-3">
+        <input type="text" name="cell-3-4">
+        <input type="text" name="cell-3-5">
+        <input type="text" name="cell-3-6">
+        <input type="text" name="cell-3-7">
+        <input type="text" name="cell-3-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
+        <!-- ROW 47 (Inputs) & ROW 48 (Buttons) -->
+        <input type="text" name="cell-4-1">
+        <input type="text" name="cell-4-2">
+        <input type="text" name="cell-4-3">
+        <input type="text" name="cell-4-4">
+        <input type="text" name="cell-4-5">
+        <input type="text" name="cell-4-6">
+        <input type="text" name="cell-4-7">
+        <input type="text" name="cell-4-8">
+        
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div><div></div><div></div>
+        <div class="button-group-row"><button type="button">A</button><button type="button">B</button><button type="button">C</button></div>
+        <div></div><div></div>
+
