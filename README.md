@@ -2,7 +2,7 @@ Auto-input-from-excel-to-html-v11.py: \
 Copy from excel and paste to web browser which is similar type to 8x24pagev2.html
 
 Auto-input-from-excel-to-html-for-switch-v1.py: \
-Copy from excel and paste to web browser which is similar type to 6x2…
+Copy from excel and paste to web browser which is similar type to 6x24page.html
 
 Auto-input-from-excel-to-html-for-switch-v2.py: \
 Revise code to deal with drop down menu at column 3
